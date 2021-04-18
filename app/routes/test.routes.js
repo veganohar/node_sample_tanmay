@@ -7,4 +7,7 @@ module.exports = function (app) {
     app.post("/databody", controller.databody);
     app.post("/dataparams/:name/:city", controller.dataparams);
     app.post("/dataquery", controller.dataquery);
+    app.get("/testejs", controller.testejs);
+    app.get("/form", controller.form);
+    app.post("/result", controller.result);
 }

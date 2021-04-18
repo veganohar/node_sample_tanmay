@@ -24,3 +24,20 @@ exports.dataquery = (req,res)=>{
     res.send(req.query);
 }
 
+
+exports.testejs = (req,res)=>{
+    let data ={
+        title:"Sample Ejs File",
+        heading:"Wlcome to Ejs Test file"
+    }
+    res.render("test",data);
+}
+
+
+exports.form = (req,res)=>{
+    res.render("form");
+}
+
+exports.result = (req,res)=>{
+    res.render("result",req.body);
+}

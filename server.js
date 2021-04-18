@@ -4,7 +4,8 @@ const port = 3000;
 const bodyparser = require("body-parser");
 
 app.use(bodyparser.json());
-
+app.use(bodyparser.urlencoded());
+app.set('view engine', 'ejs');
 app.listen(port,()=>{
     console.log("Your App is running on the Port " + port);
 })
