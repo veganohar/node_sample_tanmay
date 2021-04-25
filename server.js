@@ -31,3 +31,4 @@ app.get("/",(req,res)=>{
 })
 
 require("./app/routes/test.routes")(app);
+require("./app/routes/user.routes")(app); 
