@@ -1,4 +1,5 @@
-
+const db = require('../models');
+const User = db.user;
 
 exports.testpost = (req,res)=>{
     res.send("Post Call is working");
@@ -39,5 +40,21 @@ exports.form = (req,res)=>{
 }
 
 exports.result = (req,res)=>{
-    res.render("result",req.body);
+    let user = new User();
+    for(let p in req.body){
+        user[p] = req.body[p];
+    }
+    user.save((err,response)=>{
+        if(err){
+            let obj = {
+                color:'error',
+                msg:err
+            }
+            res.render("result",obj);
+        }
+        user.msg = 'Data saved Successfully';
+        user.color = 'success'
+        res.render("result",user);
+    })
+   
 }

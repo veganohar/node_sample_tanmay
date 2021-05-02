@@ -1,12 +1,21 @@
 <html>
     <head>
         <title>Result</title>
+        <style>
+            .msg{
+                text-align: center;
+                margin: 20px;
+            }
+        </style>
     </head>
     <body>
-        <p>Name: <%=name%></p>
-        <p>City: <%=city%></p>
-        <p>Phone: <%=phone%></p>
-        <p>Age: <%=age%></p>
+        <h1 class="msg" style="<%= color === 'error' ? 'color: red' : 'color: green' %>"><%=msg%></h1>
+        <div style="<%= color === 'error' ? 'display: none' : 'display: block' %>">
+            <p>Name: <%=name%></p>
+            <p>City: <%=city%></p>
+            <p>Phone: <%=phone%></p>
+            <p>Age: <%=age%></p>
+        </div>
     </body>
     <a href="/form">Form</a>
 </html>
